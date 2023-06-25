@@ -2,30 +2,30 @@ import { useContext } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import { ThemeContext } from './ThemeContext';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import PostPage from './pages/PostPage';
+import HomePage from './pages/HomePage';
 
 function App() {
 
   const {theme} = useContext(ThemeContext);
   return (
-    <div className={`container ${theme}`}>
-      <Navbar />
-      <div className="main">
-        <h1 className="gradient-text">Posts</h1>
-        <ur>
-          <li>
-            <h2>Post 1</h2>
-            <p>Post 1 content</p>
-          </li>
-          <li>
-            <h2>Post 2</h2>
-            <p>Post 2 content</p>
-          </li>
-        </ur>
+    <BrowserRouter>
+      <div className={`container ${theme}`}>
+        <Navbar />
+        <div className="main">
+          
+          <Routes>
+            <Route path="/post/:postId" element={ <PostPage />} />
+            <Route path="/" element={ <HomePage /> } />
+          </Routes>
+        
+        </div>
+        <div className="footer">
+          <p>All right reserved, @Taninblog2023</p>
+        </div>
       </div>
-      <div className="footer">
-        <p>All right reserved, @Taninblog2023</p>
-      </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
