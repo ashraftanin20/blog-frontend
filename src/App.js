@@ -18,8 +18,9 @@ function App() {
           <Routes>
             <Route path="/post/:postId" element={ <PostPage />} />
             <Route path="/" element={ <HomePage /> } />
+            <Route path="/search/:query?" element={<HomePage />} />
+            <Route path="/user/:userId" element={<HomePage />} />
           </Routes>
-        
         </div>
         <div className="footer">
           <p>All right reserved, @Taninblog2023</p>
