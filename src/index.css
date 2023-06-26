@@ -30,8 +30,11 @@ li {
   --color-link-light: #40c0f0;
   --color-link-hover: #f08040;
   --color-line: #404040;
-  --color-light: #e0e0e0;
+  --color-light: #eaf6f6;
   --color-dark: #202020;
+  --color-header: #66bfbf;
+  --color-header-dark: #35495e;
+  --color-button: #f76b8a;
 }
 .light {
   background-color: var(--color-light);
@@ -40,6 +43,10 @@ li {
 .dark {
   background-color: var(--color-dark);
   color: var(--color-light);
+}
+.dark .header, 
+.dark .footer {
+  background: var(--color-header-dark);
 }
 .dark button {
   background-color: var(--color-dark);
@@ -64,31 +71,70 @@ a {
 a:hover {
   color: var(--color-link-hover);
 }
+input, button {
+  font-size: 16px;
+  padding: 5px;
+}
 button {
   cursor: pointer;
-  padding: 5px;
-  font-size: 16px;
-  border: 1px solid var(--color-line);
-  border-radius: 5px;
 }
-button:hover {
+.default-button {
+  background-color: var(--color-button);
+  color: var(--color-light);
+}
+/* button:hover {
   border: 1px solid var(--color-link-hover);
-}
+} */
 .header {
-  padding: 10px;
+  padding: 5px;
   min-height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-light);
+  background-color: var(--color-header);
+}
+.header a {
+  color: var(--color-light);
+}
+.header a:hover {
+  color: var(--color-button);
+}
+.header button {
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: var(--color-light);
+  background: var(--color-button);
+  line-height: 28px;
+}
+.header button:hover {
+  background-color: var(--color-link-hover);
+}
+.search-form input {
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: none;
+  margin-left: 0.5rem;
+  font-size: 18px;
+  line-height: 28px;
+}
+.search-form button {
+  border-radius: 0 0.5rem 0.5rem 0;
+  border-right: none;
+  margin-right: 0.5rem;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
 }
 .footer {
-  padding: 10px;
+  padding: 5px;
   min-height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid var(--color-line); 
+  border-top: 1px solid var(--color-light); 
+  background-color: var(--color-header);
+  color: var(--color-light);
 }
 .blog {
   display: flex;
